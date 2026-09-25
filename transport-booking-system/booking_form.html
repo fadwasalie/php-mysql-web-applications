@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Booking Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:30px; background:#f5f6fa; }
+        .card { background:#fff; padding:20px 25px; max-width:420px; border-radius:8px;
+                box-shadow:0 2px 6px rgba(0,0,0,.1); }
+        label { display:block; margin-top:10px; font-weight:bold; font-size:14px; }
+        input { width:100%; padding:8px; margin-top:4px; box-sizing:border-box; }
+        button { margin-top:15px; padding:9px 18px; background:#273c75; color:#fff;
+                 border:none; border-radius:4px; cursor:pointer; }
+        a { display:block; margin-top:8px; color:#273c75; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Passenger Booking Form</h1>
+        <!-- required + numeric validation happens both here and server-side -->
+        <form method="post" action="add_booking.php">
+            <label>Passenger Name</label>
+            <input type="text" name="passenger_name" required>
+
+            <label>Destination</label>
+            <input type="text" name="destination" required>
+
+            <label>Fare</label>
+            <input type="number" name="fare" step="0.01" min="0" required>
+
+            <button type="submit">Add Booking</button>
+        </form>
+
+        <a href="view_bookings.php">View All Bookings</a>
+        <a href="search.php">Search by Destination</a>
+        <a href="export.php">Export to CSV</a>
+    </div>
+</body>
+</html>
